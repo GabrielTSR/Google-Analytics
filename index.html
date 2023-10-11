@@ -2,18 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meu Site</title>
-
-    <!-- Bootstrap CSS -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Dashboard</title>
+    <!-- Icon -->
+    <link
+      rel="icon"
+      href="https://easy-data.mdbgo.io/img/favicon/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
     />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    />
+    <!-- MDB UI KIT -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- Custom styles -->
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T08JD3J859">console.log("Google Analytics is working")</script>
-    <script>
-    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T08JD3J859"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -21,112 +36,331 @@
 
     gtag('config', 'G-T08JD3J859', { 'cookie_flags': 'samesite=None;secure' });
     </script>
+    <style></style>
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Meu Site</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
+
+  <body style="background-color: hsl(0, 0%, 96%)">
+    <!--Main Navigation-->
+    <header class="mb-10">
+      <!-- Navbar-->
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-white shadow-2 fixed-top"
       >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"
-              >Home <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Sobre</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Serviços</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contato</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+        <div
+          class="
+            container-fluid
+            justify-content-center justify-content-md-between
+          "
+        >
+          <!-- Left elements -->
+          <ul class="navbar-nav flex-row align-items-center">
+            <li class="nav-item me-3 me-lg-1">
+              <a
+                class="nav-link d-flex"
+                href="https://easy-data.mdbgo.io/"
+                target="_blank"
+              >
+                <img
+                  src="https://easy-data.mdbgo.io/img/logo.png"
+                  height="31"
+                  alt=""
+                  loading="lazy"
+                  class="me-2"
+                />
+                <span
+                  style="
+                    font-size: 19px;
+                    font-weight: 500;
+                    color: hsl(0, 0%, 30%);
+                  "
+                  >easy<span class="text-theme">Data</span></span
+                >
+              </a>
+            </li>
+            <li class="nav-item me-3 me-lg-1">
+              <a
+                class="nav-link"
+                href="https://twitter.com/ascensus_mdb"
+                rel="nofollow"
+                target="_blank"
+              >
+                <span><i class="fab fa-twitter"></i></span>
+              </a>
+            </li>
+            <li class="nav-item me-3 me-lg-1">
+              <a
+                class="nav-link"
+                href="https://github.com/mdbootstrap/mdb-easydata"
+                rel="nofollow"
+                target="_blank"
+              >
+                <span><i class="fab fa-github"></i></span>
+              </a>
+            </li>
+          </ul>
+          <!-- Left elements -->
 
-    <header class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">Bem-vindo ao Meu Site!</h1>
-        <p class="lead">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-          auctor, neque quis ultricies sodales, enim risus placerat leo, vel
-          sagittis justo lectus et nisl. Sed vitae dictum turpis, in rhoncus
-          dolor.
-        </p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Saiba Mais</a>
-      </div>
+          <!-- Center elements -->
+          <ul class="navbar-nav flex-row d-none d-md-flex">
+            <li class="nav-item me-3 me-lg-1">
+              <a
+                class="nav-link d-flex"
+                href="https://easy-data.mdbgo.io/#section-google-analytics"
+                target="_blank"
+              >
+                <img
+                  src="https://easy-data.mdbgo.io/img/logo-ga.png"
+                  height="22"
+                  class="me-2"
+                  alt=""
+                />
+                <span>Google Analytics example</span>
+              </a>
+            </li>
+          </ul>
+          <!-- Center elements -->
+
+          <!-- Right elements -->
+          <ul class="navbar-nav flex-row d-none d-md-flex">
+            <li class="nav-item me-3 me-lg-1">
+              <button
+                id="sign-in-btn"
+                type="button"
+                class="btn btn-primary btn-rounded"
+                onclick="signIn()"
+              >
+                Login
+              </button>
+            </li>
+            <li class="nav-item me-3 me-lg-1">
+              <a
+                id="second-screen-link"
+                class="btn btn-primary btn-rounded"
+                href="second-screen.html"
+              >
+                Tela 2
+              </a>
+            </li>
+            <li class="nav-item me-3 me-lg-1">
+              <a
+                id="third-screen-link"
+                class="btn btn-primary btn-rounded"
+                href="third-screen.html"
+              >
+                Tela 3
+              </a>
+            </li>
+            <li class="nav-item me-3 me-lg-1">
+              <button
+                id="sign-out-btn"
+                type="button"
+                class="btn btn-primary btn-rounded"
+                style="display: none"
+                onclick="signOut()"
+              >
+                Logout
+              </button>
+            </li>
+
+            <li class="nav-item me-3 me-lg-1">
+              <button
+                type="button"
+                class="btn btn-primary btn-rounded"
+                style="display: none"
+                onclick="loadData()"
+              >
+                Load Data
+              </button>
+            </li>
+
+            <li class="nav-item me-3 me-lg-1">
+              <a
+                href="https://mdbootstrap.com/"
+                target="_blank"
+                class="btn btn-danger btn-rounded mx-2 d-none d-lg-inline-block"
+                ><i class="fas fa-cubes me-2"></i>MDB UI KIT</a
+              >
+            </li>
+          </ul>
+          <!-- Right elements -->
+        </div>
+      </nav>
+      <!-- Navbar -->
     </header>
+    <!--Main Navigation-->
 
-    <section class="container">
-      <h2>Recursos do Meu Site</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <img
-              src="https://via.placeholder.com/300"
-              class="card-img-top"
-              alt="Imagem 1"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Recurso 1</h5>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
+    <!--Main layout-->
+    <main>
+      <div class="container">
+        <!--Section: Design Block-->
+        <section class="mb-8">
+          <h3 class="mb-7 text-center fw-bold">Last 7 days</h3>
+          <div class="row">
+            <div class="col-md-4 mb-4 mb-md-0">
+              <!-- Card -->
+              <div class="card">
+                <div
+                  class="
+                    card-body
+                    d-flex
+                    justify-content-start
+                    align-items-center
+                  "
+                >
+                  <div
+                    class="
+                      bg-primary
+                      text-white
+                      rounded-4
+                      d-flex
+                      justify-content-center
+                      align-items-center
+                    "
+                    style="width: 50px; height: 50px"
+                  >
+                    <i class="fas fa-users fa-lg"></i>
+                  </div>
+                  <div class="ms-3">
+                    <p class="text-muted mb-1">Users</p>
+                    <p class="mb-0">
+                      <span id="displayUsers" class="h4 me-2"></span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Card -->
+            </div>
+            <div class="col-md-4 mb-4 mb-md-0">
+              <!-- Card -->
+              <div class="card">
+                <div
+                  class="
+                    card-body
+                    d-flex
+                    justify-content-start
+                    align-items-center
+                  "
+                >
+                  <div
+                    class="
+                      bg-primary
+                      text-white
+                      rounded-4
+                      d-flex
+                      justify-content-center
+                      align-items-center
+                    "
+                    style="width: 50px; height: 50px"
+                  >
+                    <i class="fas fa-file fa-lg"></i>
+                  </div>
+                  <div class="ms-3">
+                    <p class="text-muted mb-1">Page views</p>
+                    <p class="mb-0">
+                      <span id="displayPageViews" class="h4 me-2"></span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Card -->
+            </div>
+            <div class="col-md-4">
+              <!-- Card -->
+              <div class="card">
+                <div
+                  class="
+                    card-body
+                    d-flex
+                    justify-content-start
+                    align-items-center
+                  "
+                >
+                  <div
+                    class="
+                      bg-primary
+                      text-white
+                      rounded-4
+                      d-flex
+                      justify-content-center
+                      align-items-center
+                    "
+                    style="width: 50px; height: 50px"
+                  >
+                    <i class="fas fa-chart-line fa-lg"></i>
+                  </div>
+                  <div class="ms-3">
+                    <p class="text-muted mb-1">Sessions</p>
+                    <p class="mb-0">
+                      <span id="displaySessions" class="h4 me-2"></span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Card -->
             </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <img
-              src="https://via.placeholder.com/300"
-              class="card-img-top"
-              alt="Imagem 2"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Recurso 2</h5>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <img
-              src="https://via.placeholder.com/300"
-              class="card-img-top"
-              alt="Imagem 3"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Recurso 3</h5>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </div>
-          </div>
-        </div>
+        </section>
+        <!--Section: Design Block-->
       </div>
-    </section>
+    </main>
+    <!--Main layout-->
 
-    <footer class="bg-light text-center py-4">
-      <p>&copy; 2021 Meu Site. Todos os direitos reservados.</p>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!--Footer-->
+    <footer></footer>
+    <!--Footer-->
   </body>
+
+  <!-- MDB ESSENTIAL -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Google API -->
+  <script src="https://apis.google.com/js/api.js"></script>
+  <!-- easyData - Google Analtyics -->
+  <script type="text/javascript" src="js/easyData-google-analtyics.js"></script>
+
+  <!-- easyData - Fetching data-->
+  <script>
+    // Your Client ID
+    const CLIENT_ID = "784082060967-ldd0ucl3okpmmgn9j9h1m50t8iuttiu9.apps.googleusercontent.com";
+
+    function loadData() {
+      // Your GA property ID
+      const propertyId = "409263748";
+
+      const startDate = "7daysAgo";
+      const endDate = "today";
+      const metrics = [
+        { name: "activeUsers" },
+        { name: "screenPageViews" },
+        { name: "sessions" },
+      ];
+
+      const query = {
+        dateRanges: [{ startDate, endDate }],
+        metrics: metrics,
+      };
+
+      runReport(propertyId, query, displayResult);
+    }
+
+    function displayResult(response) {
+      document.getElementById("displayUsers").innerHTML =
+        response.result.rows[0].metricValues[0].value;
+      document.getElementById("displayPageViews").innerHTML =
+        response.result.rows[0].metricValues[1].value;
+      document.getElementById("displaySessions").innerHTML =
+        response.result.rows[0].metricValues[2].value;
+    }
+
+    // Login buttons
+    document.addEventListener("gapi-loaded", (e) => {
+      if (isSignedIn()) {
+        document.getElementById("sign-out-btn").style.display = "block";
+        document.getElementById("sign-in-btn").style.display = "none";
+        loadData();
+      } else {
+        document.getElementById("sign-in-btn").style.display = "block";
+        document.getElementById("sign-out-btn").style.display = "none";
+      }
+    });
+  </script>
 </html>
